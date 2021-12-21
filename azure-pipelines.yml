@@ -1,0 +1,15 @@
+trigger:
+- master
+
+resources:
+  repositories:
+  - repository: yml_templates # The name used to reference this repository in the checkout step
+    type: git
+    name: vigo-bas/yml_templates
+
+#Made 20200319 based on the catalogue defined here: https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/tool/nuget?view=azure-devops
+
+jobs:
+- template: agent_template.yml@yml_templates
+  parameters:
+    BuildConfiguration: 'Release'
