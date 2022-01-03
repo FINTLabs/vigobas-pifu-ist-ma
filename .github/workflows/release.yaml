@@ -46,4 +46,7 @@ jobs:
         with:
           name: vigobas-pifu-ist-ma
           path: bin/Release/PIFUMAExtension.dll
+          
+      - name: Github Release
+        uses: elgohr/Github-Release-Action@v3.1
    
