@@ -96,6 +96,10 @@
     <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.MetadirectoryServicesEx, Version=4.1.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Vigo.Bas.0.0.4\content\lib\Microsoft.MetadirectoryServicesEx.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -127,7 +131,7 @@
       <Name>System.XML</Name>
     </Reference>
     <Reference Include="Vigo.Bas, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Vigo.Bas.0.0.3\lib\net472\Vigo.Bas.dll</HintPath>
+      <HintPath>packages\Vigo.Bas.0.0.4\lib\net472\Vigo.Bas.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +176,9 @@
     <None Include="Resources\PIFU-IMS_SAS_1_2.xsd">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\Microsoft.MetadirectoryServicesEx.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
