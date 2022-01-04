@@ -47,13 +47,13 @@ jobs:
           name: vigobas-pifu-ist-ma
           path: bin/Release/PIFUMAExtension.dll
           
-     
-  release:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-       - name: Github Release
-         uses: elgohr/Github-Release-Action@v3.1
+      - name: Publish artifact
+        uses: SierraSoftworks/gh-releases@v1.0.4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          overwrite: 'true'
+          files: |
+            PIFUMAExtension.dll
+              
+      
  
