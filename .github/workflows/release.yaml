@@ -38,6 +38,7 @@ jobs:
           name: vigobas-pifu-ist-ma
           path: bin/Release/PIFUMAExtension.dll
   publish:
+    needs: build
     name: publish artifacts to github release
     runs-on: ubuntu-latest
     steps:
