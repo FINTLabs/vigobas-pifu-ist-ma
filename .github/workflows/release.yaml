@@ -48,11 +48,9 @@ jobs:
           path: bin/Release/PIFUMAExtension.dll
           
       - name: Publish artifact
-        uses: SierraSoftworks/gh-releases@v1.0.4
+        uses: cb80/pubrel@latest
         with:
-          overwrite: 'true'
           files: |
             PIFUMAExtension.dll
-              
       
  
