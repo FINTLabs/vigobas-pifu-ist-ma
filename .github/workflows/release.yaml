@@ -46,7 +46,7 @@ jobs:
 
       - name: Build Solution
         run: |
-          msbuild.exe PIFUExtensions.sln /p:platform="Any CPU" /p:configuration="Release" /p:Version=${{ github.ref }}
+          msbuild.exe PIFUExtensions.sln /p:platform="Any CPU" /p:configuration="Release";VersionAssembly=${{ github.ref }}
           
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.3.1
