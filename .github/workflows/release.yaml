@@ -1,4 +1,4 @@
-name: Build
+name: Build and publish release
 
 on:
   push:
@@ -51,7 +51,7 @@ jobs:
 
       - name: Build Solution
         run: |
-          msbuild.exe PIFUExtensions.sln -property:platform="Any CPU";Configuration="Release";VersionAssembly=${{steps.get_tag.outputs.ID}}
+          msbuild.exe PIFUExtensions.sln -property:platform="Any CPU" -property=Configuration="Release" -property=VersionAssembly=${{steps.get_tag.outputs.ID}}
           
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.3.1
