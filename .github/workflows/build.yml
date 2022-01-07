@@ -34,5 +34,5 @@ jobs:
 
       - name: Build Solution
         run: |
-          msbuild.exe PIFUExtensions.sln -property:platform="Any CPU" -property=Configuration="Release" -property=VersionAssembly="t1"
+          msbuild.exe PIFUExtensions.sln -property:platform="Any CPU" -property:Configuration="Release" -property:VersionAssembly="t1"
     
