@@ -44,9 +44,14 @@ jobs:
       - name: Restore Packages
         run: nuget restore PIFUExtensions.sln
 
+      - name: Get tag
+        id: get_tag
+        run: echo ::set-output name=ID::${GITHUB_REF/refs\/tags\//}
+        shell: bash
+
       - name: Build Solution
         run: |
-          msbuild.exe PIFUExtensions.sln /p:platform="Any CPU" /p:configuration="Release";VersionAssembly=${{ github.ref }}
+          msbuild.exe PIFUExtensions.sln /p:platform="Any CPU" /p:configuration="Release" p/:VersionAssembly=${{steps.get_tag.outputs.ID}}
           
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.3.1
