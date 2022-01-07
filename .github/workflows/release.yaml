@@ -51,7 +51,7 @@ jobs:
 
       - name: Build Solution
         run: |
-          msbuild.exe PIFUExtensions.sln -property:platform="Any CPU" -property=Configuration="Release"
+          msbuild.exe PIFUExtensions.sln -property:platform="Any CPU" -property:Configuration="Release"
           
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.3.1
