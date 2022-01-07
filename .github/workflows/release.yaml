@@ -49,7 +49,6 @@ jobs:
           msbuild.exe PIFUExtensions.sln /p:platform="Any CPU" /p:configuration="Release"
           
       - name: Upload a Build Artifact
-        run: mkdir ReleaseOutput
         uses: actions/upload-artifact@v2.3.1
         with:
           name: vigobas-pifu-ist-ma
