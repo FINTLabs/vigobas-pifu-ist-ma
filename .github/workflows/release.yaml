@@ -46,7 +46,7 @@ jobs:
 
       - name: Build Solution
         run: |
-          msbuild.exe PIFUExtensions.sln /p:platform="Any CPU" /p:configuration="Release"
+          msbuild.exe PIFUExtensions.sln /p:platform="Any CPU" /p:configuration="Release" /p:Version=${{ github.ref }}
           
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.3.1
@@ -62,7 +62,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: vigobas-pifu-ist-ma
-          #path: bin/Release/PIFUMAExtension.dll
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
