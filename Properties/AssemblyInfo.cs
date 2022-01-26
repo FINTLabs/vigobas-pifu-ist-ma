@@ -110,4 +110,4 @@ using System.Reflection;
 [assembly: AssemblyKeyFile( "" )]
 [assembly: AssemblyKeyName( "" )]
 //[assembly: AssemblyFileVersion("1.6.0")]
-[assembly: AssemblyFileVersion("1.1.3")]
+[assembly: AssemblyFileVersion("1.7.0")]

@@ -131,7 +131,7 @@
       <Name>System.XML</Name>
     </Reference>
     <Reference Include="Vigo.Bas, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Vigo.Bas.0.0.4\lib\net472\Vigo.Bas.dll</HintPath>
+      <HintPath>packages\Vigo.Bas.1.0.0\lib\net472\Vigo.Bas.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
