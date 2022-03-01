@@ -49,6 +49,18 @@ jobs:
         run: echo ::set-output name=ID::${GITHUB_REF/refs\/tags\//}
         shell: bash
 
+      - name: Get year
+        id: get_year
+        run: echo "::set-output name=YEAR::$(date +'%Y')"
+        shell: bash
+
+      - name: Set assembly info       
+        run: |
+          sed -i -E "s/(AssemblyVersion[(]\").*(\"[)])/\1${{steps.get_tag.outputs.ID}}\2/"  ./AssemblyInfo.cs
+          sed -i -E "s/(AssemblyFileVersion[(]\").*(\"[)])/\1${{steps.get_tag.outputs.ID}}\2/"  ./AssemblyInfo.cs
+          sed -i -E "s/(AssemblyCopyright[(]\"Copyright ).*( Vigo IKS)/\1${{steps.get_year.outputs.YEAR}}\2/"  ./AssemblyInfo.cs
+        shell: bash
+        
       - name: Build Solution
         run: |
           msbuild.exe PIFUExtensions.sln -property:platform="Any CPU" -property:Configuration="Release"
