@@ -32,10 +32,11 @@ using System.Reflection;
 //Product name
 [assembly: AssemblyProduct("VIGO-BAS")]
 //Copyright
-[assembly: AssemblyCopyright("Copyright � 2020 Vigo IKS")]
+[assembly: AssemblyCopyright("Copyright (C) 2020 Vigo IKS")]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 //Product version
-[assembly: AssemblyInformationalVersion("1.7.0")]
+[assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyFileVersion("1.0.*")]
 
 
