@@ -56,9 +56,9 @@ jobs:
 
       - name: Set assembly info       
         run: |
-          sed -i -E "s/(AssemblyVersion[(]\").*(\"[)])/\1${{steps.get_tag.outputs.ID}}\2/"  ./AssemblyInfo.cs
-          sed -i -E "s/(AssemblyFileVersion[(]\").*(\"[)])/\1${{steps.get_tag.outputs.ID}}\2/"  ./AssemblyInfo.cs
-          sed -i -E "s/(AssemblyCopyright[(]\"Copyright ).*( Vigo IKS)/\1${{steps.get_year.outputs.YEAR}}\2/"  ./AssemblyInfo.cs
+          sed -i -E "s/(AssemblyVersion[(]\").*(\"[)])/\1${{steps.get_tag.outputs.ID}}\2/"  ./Properties/AssemblyInfo.cs
+          sed -i -E "s/(AssemblyFileVersion[(]\").*(\"[)])/\1${{steps.get_tag.outputs.ID}}\2/"  ./Properties/AssemblyInfo.cs
+          sed -i -E "s/(AssemblyCopyright[(]\"Copyright ).*( Vigo IKS)/\1${{steps.get_year.outputs.YEAR}}\2/"  ./Properties/AssemblyInfo.cs
         shell: bash
         
       - name: Build Solution
