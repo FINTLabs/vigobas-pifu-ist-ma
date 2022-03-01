@@ -64,12 +64,19 @@ jobs:
       - name: Build Solution
         run: |
           msbuild.exe PIFUExtensions.sln -property:platform="Any CPU" -property:Configuration="Release"
+
+      - name: Pack release
+        run: |
+          cd bin/release
+          7z a -tzip vigobas-pifu-ist-ma-${{steps.get_tag.outputs.ID}}.zip *.dll -r
+          cp *.zip ../..
           
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.3.1
         with:
           name: vigobas-pifu-ist-ma
-          path: bin/release/PIFUMAExtension.dll
+          path: vigobas-pifu-ist-ma-${{steps.get_tag.outputs.ID}}.zip
+          
   publish:
     needs: build
     name: publish artifacts to github release
@@ -79,10 +86,11 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: vigobas-pifu-ist-ma
+          
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: PIFUMAExtension.dll
+          files: vigobas-pifu-ist-ma-*.zip
         
 
     
