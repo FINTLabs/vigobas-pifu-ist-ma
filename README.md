@@ -12,4 +12,4 @@ Moved from Azure devops
 No new features
 
 ### Bugfixes
-No Bugfixes
+No bugfixes
