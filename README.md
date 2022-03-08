@@ -1,4 +1,4 @@
-# vigobas-pifu-ist-ma
+# VIGOBAS Pifu IST MA
 
 ## Description
 Management Agent for Microsoft Identity Manager (MIM). Reads Pifu XML files.
